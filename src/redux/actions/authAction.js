@@ -31,7 +31,7 @@ export const loadUser = () => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .get("http://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users", config)
+    .get("https://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users", config)
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -60,7 +60,7 @@ export const register =
     // Request body
     const body = JSON.stringify({ name, email, password });
     axios
-      .post("http://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users/register", body, config)
+      .post("https://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users/register", body, config)
       .then((res) =>
         dispatch({
           type: REGISTER_SUCCESS,
@@ -98,7 +98,7 @@ export const login =
     const body = JSON.stringify({ email, password });
 
     axios
-      .post("http://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users/login", body, config)
+      .post("https://messaging-web-app-server.us-west-1.elasticbeanstalk.com/users/login", body, config)
       .then((res) =>
         dispatch({
           type: LOGIN_SUCCESS,
