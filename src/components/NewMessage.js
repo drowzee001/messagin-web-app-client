@@ -30,6 +30,7 @@ const NewMessage = () => {
       messagesState.success = false;
       history.push("/home");
     }
+    // eslint-disable-next-line
   }, [messagesState.success]);
 
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const NewMessage = () => {
 
   return (
     <Form onSubmit={(event) => sendMessage(event)} id="newMessage">
+      <h1>New Message</h1>
       <Form.Control
         className="newMessageReceiver"
         type="email"
@@ -50,7 +52,7 @@ const NewMessage = () => {
       />
       <Form.Group id="newMessageGroup">
         <Form.Control
-          type="text"
+          as="textarea"
           id="newMessageText"
           placeholder="Message"
           maxLength={150}

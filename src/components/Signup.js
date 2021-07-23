@@ -78,7 +78,7 @@ const Signup = () => {
         ></Form.Control>
       </Form.Group>
       {/* Captcha */}
-      <Button type="submit">Login</Button>
+      <Button type="submit">Signup</Button>
       <Nav.Link id="account" onClick={() => history.push("/login")}>
         Already have an account?
       </Nav.Link>

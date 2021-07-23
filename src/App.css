@@ -92,9 +92,12 @@
   width: 100%;
   max-width: 500px;
   margin: auto;
-  padding-top: 56px;
   padding-left: 15px;
   padding-right: 15px;
+}
+#newMessage h1 {
+  padding-bottom: 20px;
+  text-align: center;
 }
 #newMessageGroup {
   width: 100%;
@@ -103,7 +106,7 @@
   margin: 0;
 }
 #newMessageText {
-  height: 90%;
+  height: 50%;
   margin: 15px 0;
 }
 #send #conversations {
@@ -122,15 +125,15 @@
 }
 
 /* Messages CSS */
-h1 {
-  padding-top: 80px;
-  padding-bottom: 20px;
-  text-align: center;
-}
 #messages {
   max-width: 500px;
   margin: auto;
   margin-bottom: 76px;
+}
+#messages h1 {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 #messagesForm {
   display: flex;

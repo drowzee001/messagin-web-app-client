@@ -43,8 +43,16 @@ const Home = () => {
 
     return (
       <Card id="conversations">
-        <Card.Header>Recent Conversations</Card.Header>
-        <ListGroup>{listItems}</ListGroup>
+        <Card.Header style={{ textAlign: "center" }}>
+          Recent Conversations
+        </Card.Header>
+        {conversations.length > 0 ? (
+          <ListGroup>{listItems}</ListGroup>
+        ) : (
+          <ListGroup.Item style={{ textAlign: "center" }}>
+            No Conversations
+          </ListGroup.Item>
+        )}
       </Card>
     );
   };
@@ -52,11 +60,8 @@ const Home = () => {
   if (!conversationsState.loading)
     return (
       <>
-        {conversations.length > 0 ? (
-          <ConversationCards></ConversationCards>
-        ) : (
-          <div>No Conversations</div>
-        )}
+        <ConversationCards></ConversationCards>
+
         <Fab
           id="addMessage"
           size="medium"

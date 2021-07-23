@@ -38,8 +38,8 @@ const Messages = () => {
 
     return (
       <div>
-        <h1>{otherUserName}</h1>
         <ListGroup id="messages">
+        <h1>{otherUserName}</h1>
           {messages.map((message) => {
             const date = new Date(message.date).toLocaleString();
             if (message.sender_id === auth.user.id) {
