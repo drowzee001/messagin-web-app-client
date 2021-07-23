@@ -15,7 +15,7 @@ export const getConversations = () => (dispatch, getState) => {
   }
 
   axios
-    .get("https://messaging-web-app-server-dev.eba-2mx7yim8.us-west-1.elasticbeanstalk.com/conversations", config)
+    .get("https://messaging-web-app-server.donovanrowzee.net/conversations", config)
     .then((res) => {
       dispatch({
         type: GET_CONVERSATIONS,
