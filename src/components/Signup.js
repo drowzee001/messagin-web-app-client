@@ -82,9 +82,7 @@ const Signup = () => {
       <Nav.Link id="account" onClick={() => history.push("/login")}>
         Already have an account?
       </Nav.Link>
-      <Form.Group>
         <div className="alert">{msg}</div>
-      </Form.Group>
     </Form>
   );
 };

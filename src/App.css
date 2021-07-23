@@ -39,6 +39,7 @@
 .alert {
   color: red;
   text-align: center;
+  height: 1em;
 }
 
 /* Component CSS */
@@ -66,16 +67,20 @@
 #registerForm {
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 0 25px;
   max-width: 300px;
   margin: auto;
   justify-content: center;
   height: 100vh;
 }
+#loginForm h1, #registerForm h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
 
 #account {
   text-align: center;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
 #errorText {
@@ -96,6 +101,7 @@
   padding-right: 15px;
 }
 #newMessage h1 {
+  margin-top: 76px;
   padding-bottom: 20px;
   text-align: center;
 }
