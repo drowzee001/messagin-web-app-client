@@ -15,7 +15,7 @@ export const getConversations = () => (dispatch, getState) => {
   }
 
   axios
-    .get("https://messaging-web-app-server.donovanrowzee.net/conversations", config)
+    .get("https://messaging-web-app-server.herokuapp.com/conversations", config)
     .then((res) => {
       dispatch({
         type: GET_CONVERSATIONS,
