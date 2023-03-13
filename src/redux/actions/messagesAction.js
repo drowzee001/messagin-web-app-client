@@ -22,7 +22,7 @@ export const getMessages = (conversation_id) => (dispatch, getState) => {
   }
   // Load messages using the conversation id
   axios
-    .get(`https://messaging-web-app-server.herokuapp.com/messages/${conversation_id}`, config)
+    .get(`https://messenger.donovanrowzee.com/messages/${conversation_id}`, config)
     .then((res) => {
       dispatch({
         type: GET_MESSAGES,
@@ -53,7 +53,7 @@ export const addMessage = (receiver_email, text) => (dispatch, getState) => {
 
   // Confirm Recipient and get name
   axios
-    .post(`https://messaging-web-app-server.herokuapp.com/users/`, { receiver_email }, config)
+    .post(`https://messenger.donovanrowzee.com/users/`, { receiver_email }, config)
     .then((res) => {
       if (res.data.user._id === auth.user.id) {
         dispatch(
@@ -68,7 +68,7 @@ export const addMessage = (receiver_email, text) => (dispatch, getState) => {
           text: text,
         };
         axios
-          .post("https://messaging-web-app-server.herokuapp.com/messages/message", message, config)
+          .post("https://messenger.donovanrowzee.com/messages/message", message, config)
           .then((res) => {
             dispatch({
               type: ADD_MESSAGE,
@@ -111,7 +111,7 @@ export const sendMessage = (receiver_id, text) => (dispatch, getState) => {
 
   // Confirm Recipient and get name
   axios
-    .get(`https://messaging-web-app-server.herokuapp.com/users/${receiver_id}`, config)
+    .get(`https://messenger.donovanrowzee.com/users/${receiver_id}`, config)
     .then((res) => {
       const message = {
         sender_id: auth.user.id,
@@ -121,7 +121,7 @@ export const sendMessage = (receiver_id, text) => (dispatch, getState) => {
         text: text,
       };
       axios
-        .post("https://messaging-web-app-server.herokuapp.com/messages/message", message, config)
+        .post("https://messenger.donovanrowzee.com/messages/message", message, config)
         .then((res) => {
           dispatch({
             type: ADD_MESSAGE,
@@ -157,7 +157,7 @@ export const deleteMessage = (id) => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .delete(`https://messaging-web-app-server.herokuapp.com/messages/${id}`, config)
+    .delete(`https://messenger.donovanrowzee.com/messages/${id}`, config)
     .then((res) => {
       dispatch({
         type: DELETE_MESSAGE,
